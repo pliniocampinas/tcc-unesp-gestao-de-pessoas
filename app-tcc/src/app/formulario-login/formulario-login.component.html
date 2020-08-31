@@ -1,0 +1,36 @@
+<h1> Login </h1>
+<hr>
+<div class="conteudo-login">
+
+
+    <form [formGroup]="formLogin"
+          (submit)="onConfirmarLogin(usuario.value, senha.value)"
+          id="centro">
+      <mat-card>
+
+        <mat-form-field>
+          Usuário:<br>
+          <input matInput type="text" name="usuario" #usuario formControlName="usuario">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          Senha:
+          <br>
+          <input matInput type="password" name="senha" #senha formControlName="senha">
+          <br>
+        </mat-form-field>
+
+        <br>
+
+        <button
+          mat-raised-button
+          color= "accent"
+          type="submit"
+          [disabled]="formLogin.pristine || formLogin.invalid">
+          Confirmar
+        </button>
+
+      </mat-card>
+    </form>
+  </div>

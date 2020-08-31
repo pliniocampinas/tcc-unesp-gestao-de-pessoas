@@ -1,0 +1,12 @@
+-- abrir mongod
+"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\TCC\back-end\db"
+
+-- adicionado o mongod no path, só escrever, no cmd aberto como administrador
+mongod --dbpath="C:\Program Files\MongoDB\Server\4.0\data"
+-- os dois comandos iniciarao o mongod, que abre por padrao no enderesso localhost:27017
+
+-- para abrir o servidor
+cd TCC/back-end
+-- o run dev serve para rodar apartir do script 'dev', que esta configurado para rodar pelo babel
+-- sem rodar pelo babel, dará problema devido a uso de features do ES6
+npm run dev

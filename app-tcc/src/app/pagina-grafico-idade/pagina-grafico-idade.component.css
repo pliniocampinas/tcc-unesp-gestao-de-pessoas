@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+
+.conteudo-grafico {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.botao-voltar {
+  width: 20%;
+  margin-left: 40%;
+}

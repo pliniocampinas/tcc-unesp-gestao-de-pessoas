@@ -1,0 +1,34 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+
+      <div class="conteudo-grid-tile" routerLink="/grafico-idade">
+          <h3 class="titulo-visualizacao"> Gráfico de Idade </h3>
+          <img class = "img-grid" [src]="imagePathGraficoIdade">
+      </div>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+      <div class="conteudo-grid-tile" routerLink="/grafico-atividades">
+          <h3 class="titulo-visualizacao"> Atividades Mês de {{ mes }} </h3>
+          <img class = "img-grid" [src]="imagePathGraficoAtividadesMes">
+      </div>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+      <div class="conteudo-grid-tile" routerLink="/grafico-estados">
+          <h3 class="titulo-visualizacao"> Pessoas por Estado </h3>
+          <img class = "img-grid" [src]="imagePathGraficoEstados">
+      </div>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile> </mat-grid-tile>
+    <mat-grid-tile> </mat-grid-tile>
+    <mat-grid-tile> </mat-grid-tile>
+    <mat-grid-tile> </mat-grid-tile>
+    <mat-grid-tile> </mat-grid-tile>
+  </mat-grid-list>

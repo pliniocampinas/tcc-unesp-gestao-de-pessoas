@@ -1,0 +1,98 @@
+table {
+  width: 80%;
+  margin-left: 10%;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* .centraliza {
+  text-align: center;
+} */
+
+.botao-cadastrar {
+  width: 20%;
+  margin-left: 40%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+mat-card {
+  width: 60%;
+  margin: auto;
+}
+
+mat-form-field {
+  width: 60%;
+  margin-left: 10%;
+  margin-top: 2px;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #f5f5f5;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+.imagemPerfil {
+  height: 270px;
+  width: 200px;
+  max-width: 33%;
+  margin: 10px;
+}
+
+.example-card {
+  width: 80%;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+mat-card-content {
+  width: 60%;
+  float: right;
+}
+
+mat-card-title {
+  text-align: center;
+}

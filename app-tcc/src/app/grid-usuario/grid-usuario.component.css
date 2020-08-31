@@ -1,0 +1,19 @@
+table {
+  width: 80%;
+  margin-left: 10%;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* .centraliza {
+  text-align: center;
+} */
+
+.botao-cadastrar {
+  width: 20%;
+  margin-left: 40%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}

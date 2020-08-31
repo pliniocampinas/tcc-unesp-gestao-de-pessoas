@@ -1,0 +1,39 @@
+<mat-nav-list>
+
+<a mat-list-item routerLink="/inicio" routerLinkActive="active">Início</a>
+
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+
+  <!-- This is the tree node template for leaf nodes -->
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+
+    <a mat-list-item [routerLink] = "node.rota" routerLinkActive="active" class="no-interno">{{node.name}}</a>
+  </mat-tree-node>
+  <!-- This is the tree node template for expandable nodes -->
+  <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+    <button mat-icon-button matTreeNodeToggle
+            [attr.aria-label]="'toggle ' + node.name">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    <a matTreeNodeToggle class="no-raiz" mat-list-item>{{node.name}}</a>
+  </mat-tree-node>
+</mat-tree>
+
+
+  <!-- Retirado da side bar, ficará acessivel na pagina lista-usuarios-->
+  <!-- <a mat-list-item routerLink="/cadastrar-usuario" routerLinkActive="active">Cadastrar Usuário</a> -->
+  <!-- <a mat-list-item routerLink="/inicio" routerLinkActive="active">Início</a> -->
+  <!-- <a mat-list-item routerLink="/lista-usuarios" routerLinkActive="active">Usuários</a> -->
+  <!-- <a mat-list-item routerLink="/lista-pessoas" routerLinkActive="active">Pessoas</a> -->
+  <!-- <a mat-list-item routerLink="/lista-atividades" routerLinkActive="active">Atividades realizadas</a> -->
+
+  <!-- Implementar -->
+  <!-- <a mat-list-item routerLink="/fichas" routerLinkActive="active">Fichas</a> -->
+  <!-- <a mat-list-item routerLink="/lista-ocorrencias" routerLinkActive="active">Ocorrências</a> -->
+  <!-- <a mat-list-item routerLink="/" routerLinkActive="active">Tasks</a> -->
+
+</mat-nav-list>
+

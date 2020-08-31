@@ -1,0 +1,94 @@
+<div>
+  <h1>Cadastro de Usuários</h1>
+  <hr>
+  <form [formGroup]="formUsuario"
+        (submit)="onConfirmarUsuario(nome.value, usuario.value, email.value, dataNasc.value, senha.value, privilegio.value)"
+        id="centro">
+    <mat-card>
+      <mat-form-field>
+        Nome Completo:<br>
+        <input matInput type="text" name="nome" #nome formControlName="nomeCompleto">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Usuário:<br>
+        <input matInput type="text" name="usuario" #usuario formControlName="usuario">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Email:
+        <br>
+        <input matInput type="email" name="email" #email formControlName="email">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Data de Nascimento:
+        <br>
+        <input matInput type="date" name="dataNasc" #dataNasc formControlName="dataNasc">
+        <br>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Senha:
+        <br>
+        <input matInput type="password" name="senha" #senha formControlName="senha">
+        <br>
+      </mat-form-field>
+
+      <mat-form-field>
+        Privilégio:
+        <br>
+        <input matInput type="number" name="privilegio" #privilegio formControlName="privilegio">
+        <br>
+      </mat-form-field>
+
+      <br>
+      <div class="input-imagem">
+          Foto de Perfil:
+          <br>
+          <!-- <input id="imagemPerfil" type="file" name="imagemPerfil" #imagemPerfil formControlName="imagemPerfil" (change)="uploadImagem()"> -->
+          <input id="imagemPerfil" type="file" (change)="uploadImagem()">
+          <br>
+      </div>
+      <br>
+
+      <!-- <div class="input-imagem">
+        File input for upload without using the plugin.
+        <input id="photo" type="file" />
+        button to trigger the file upload when submitted
+        <button type="button" (click)="uploadImagem()">
+        Upload with method 2
+        </button>
+      </div> -->
+
+      <!-- <div class="exibe-imagens-anexadas">
+          <img [src]="imagePathFoto" *ngIf="imagePathFoto" class="imagens-anexadas">
+      </div> -->
+
+      <!-- Nova versão para imagens maiores -->
+      <div class="exibe-imagens-anexadas">
+          <img [src]="imagePathPerfil" *ngIf="imagePathPerfil" class="imagens-anexadas">
+      </div>
+
+      <button
+        mat-raised-button
+        color= "accent"
+        type="submit"
+        [disabled]="formUsuario.pristine || formUsuario.invalid">
+        Confirmar
+      </button>
+
+      <button
+        mat-raised-button
+        color= "primary"
+        type="alert"
+        routerLink="/lista-usuarios">
+        Voltar
+      </button>
+    </mat-card>
+  </form>
+</div>

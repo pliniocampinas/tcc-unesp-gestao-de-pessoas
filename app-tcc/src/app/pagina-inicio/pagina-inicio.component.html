@@ -1,0 +1,35 @@
+<h1>Página Inicial</h1>
+<h3>Seja Bem-Vindo</h3>
+<hr>
+<!-- <h4> {{ usuarioLogado }}</h4> -->
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title> {{ usuarioObj.usuario }}</mat-card-title>
+      <mat-card-subtitle> {{ usuarioObj.privilegio <= 10? 'Usuário': 'Gestor'}} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="getPath(pathPerfil)" class="imagemPerfil">
+    <mat-card-content>
+      <p> <b>Nome Completo:</b> {{usuarioObj.nomeCompleto}} </p>
+      <p> <b>Email:</b> {{usuarioObj.email}} </p>
+
+      <p> <b>Idade:</b> {{ getIdade(usuarioObj.dataNasc) }} </p>
+
+      <p> <b>Privilégio:</b> {{ usuarioObj.privilegio }} </p>
+      <br>
+
+      <p>
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non dignissim dui. Donec eros elit, cursus in enim at,
+        feugiat varius dolor. Suspendisse ut imperdiet augue, in hendrerit tellus. Vestibulum eu pretium lorem,
+        sit amet blandit orci. Sed tempus augue nec efficitur elementum. Sed vehicula ligula leo,
+        sed aliquet mauris condimentum id. Proin feugiat mauris vel lacus luctus, sit amet suscipit urna feugiat.
+        Duis dapibus odio eget sapien tristique, vel vehicula magna cursus. Aenean gravida urna malesuada nisl congue,
+        nec mattis risus luctus.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Alterar Perfil</button>
+      <button mat-button>Ver Ficha Completa</button>
+    </mat-card-actions>
+</mat-card>

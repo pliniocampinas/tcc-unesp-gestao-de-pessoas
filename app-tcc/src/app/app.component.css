@@ -1,0 +1,7 @@
+mat-sidenav-container {
+  min-height: 87%;
+}
+
+mat-sidenav-content {
+  padding-bottom: 40px;
+}

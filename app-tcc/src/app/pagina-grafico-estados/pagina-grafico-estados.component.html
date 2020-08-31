@@ -1,0 +1,24 @@
+<h1> Gráfico de Pessoas por Estado </h1>
+<hr>
+<button
+mat-raised-button
+color= "primary"
+type="alert"
+routerLink="/visao-geral"
+class="botao-voltar">
+Voltar
+</button>
+
+<hr>
+<div class="conteudo-grafico">
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              >
+      </canvas>
+    </div>
+</div>

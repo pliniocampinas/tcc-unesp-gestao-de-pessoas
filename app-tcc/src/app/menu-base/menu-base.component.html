@@ -1,0 +1,75 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>Sistema de Gerenciamento de Pessoas - TCC</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/login'"> Sair </a>
+        <a *ngIf="(usuarioLogado.length > 0) && !(router.url === '/login')" mat-button [routerLink]="'/perfil'">
+          <mat-icon>person_outline</mat-icon>
+          ({{ usuarioLogado }})
+        </a>
+
+        <a mat-button> Ajuda </a>
+      </div>
+    </mat-toolbar-row>
+
+    <!-- <mat-toolbar-row>
+        <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
+      </mat-toolbar-row> -->
+</mat-toolbar>
+
+<!-- Versao tentando usar o mat-menu -->
+<!--
+<div>
+  <button color="primary" mat-button [matMenuTriggerFor]="login">Login ({{ usuarioLogado }}) </button>
+
+  <button mat-button >Inicio</button>
+
+  <mat-menu #login="matMenu">
+        <button mat-menu-item routerLink="/" routerLinkActive="active">{{ usuarioLogado }}</button>
+
+        <button mat-menu-item routerLink="/" routerLinkActive="active">Alterar Perfil</button>
+
+        <button mat-menu-item routerLink="/" routerLinkActive="active">Sair</button>
+  </mat-menu>
+
+ Exemplo da documentacao, usado para fazer esse menu
+  <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+
+  <mat-menu #animals="matMenu" xPosition="after">
+    <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+    <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+  </mat-menu>
+
+  <mat-menu #vertebrates="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+    <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+    <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+    <button mat-menu-item>Birds</button>
+    <button mat-menu-item>Mammals</button>
+  </mat-menu>
+
+  <mat-menu #invertebrates="matMenu">
+      <button mat-menu-item>Insects</button>
+      <button mat-menu-item>Molluscs</button>
+      <button mat-menu-item>Crustaceans</button>
+      <button mat-menu-item>Corals</button>
+      <button mat-menu-item>Arachnids</button>
+      <button mat-menu-item>Velvet worms</button>
+      <button mat-menu-item>Horseshoe crabs</button>
+  </mat-menu>
+
+  <mat-menu #fish="matMenu">
+      <button mat-menu-item>Baikal oilfish</button>
+      <button mat-menu-item>Bala shark</button>
+      <button mat-menu-item>Ballan wrasse</button>
+      <button mat-menu-item>Bamboo shark</button>
+      <button mat-menu-item>Banded killifish</button>
+  </mat-menu>
+
+
+</div>
+-->

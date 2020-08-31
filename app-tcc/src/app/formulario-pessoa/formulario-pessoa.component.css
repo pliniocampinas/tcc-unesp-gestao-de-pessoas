@@ -1,0 +1,40 @@
+mat-card {
+  width: 80%;
+  margin: auto;
+}
+
+#centro{
+  width: 80%;
+  margin: auto;
+
+}
+mat-form-field, .input-imagem {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+button {
+  width: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+h1 {
+  text-align: center;
+}
+
+div {
+  margin-bottom: 5%;
+}
+
+.exibe-imagens-anexadas {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  border: 10px, solid, black;
+}
+
+.imagens-anexadas {
+  width: 100px;
+}

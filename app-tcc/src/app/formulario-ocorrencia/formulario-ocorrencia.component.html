@@ -1,0 +1,61 @@
+<div>
+    <h1>Cadastro de Usuários</h1>
+    <hr>
+    <form [formGroup]="formOcorrencia"
+          (submit)="onConfirmar(nomeUsuario.value, tipo.value, titulo.value, texto.value)"
+          id="centro">
+      <mat-card>
+        <mat-form-field>
+          <mat-label>Usuário</mat-label>
+          <input matInput type="text" required name="nomeUsuario" #nomeUsuario formControlName="nomeUsuario">
+        </mat-form-field>
+        <br>
+
+        <!-- <mat-form-field>
+          Tipo de Ocorrência:<br>
+          <input matInput type="text" name="tipo" #tipo formControlName="tipo">
+        </mat-form-field>
+        <br> -->
+
+        <mat-form-field>
+            <mat-label>Tipo de Ocorrência</mat-label>
+            <select matNativeControl required name="tipo" #tipo formControlName="tipo">
+              <option label="--Selecione um tipo --"></option>
+              <!-- <option value="saab">Saab</option> -->
+              <option *ngFor="let opcao of opcoesSelectOcorrencia">{{ opcao }}</option>
+            </select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Título</mat-label>
+          <input matInput type="text" name="titulo" #titulo formControlName="titulo">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Texto da Ocorrência</mat-label>
+          <input matInput type="text" name="texto" #texto formControlName="texto">
+          <br>
+        </mat-form-field>
+        <br>
+
+        <br>
+
+        <button
+          mat-raised-button
+          color= "accent"
+          type="submit"
+          [disabled]="formOcorrencia.pristine || formOcorrencia.invalid">
+          Confirmar
+        </button>
+
+        <button
+          mat-raised-button
+          color= "primary"
+          type="alert"
+          routerLink="/lista-ocorrencias">
+          Voltar
+        </button>
+      </mat-card>
+    </form>
+  </div>

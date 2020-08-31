@@ -1,0 +1,73 @@
+<div>
+    <h1>Cadastro de Atividades</h1>
+    <hr>
+    <form [formGroup]="formAtividade"
+          (submit)="onConfirmarAtividade(usuario.value, dataInicio.value, horaInicio.value, dataTermino.value, horaTermino.value, sigla?.value, descricao.value)"
+          id="centro">
+      <mat-card>
+
+        <mat-form-field>
+          Usuário:<br>
+          <input matInput type="text" name="usuario" #usuario formControlName="usuario">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          Data de Início da atividade:
+          <br>
+          <input matInput type="date" name="dataInicio" #dataInicio formControlName="dataInicio" (focusout)="onDataInicioChange()">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          Hora de Início:
+          <br>
+          <input matInput type="time" name="horaInicio" #horaInicio formControlName="horaInicio">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          Data de Término:<br>
+          <input matInput type="date" name="dataTermino" #dataTermino formControlName="dataTermino">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          Hora de Término:
+          <br>
+          <input matInput type="time" name="horaTermino" #horaTermino formControlName="horaTermino">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field *ngIf="atividadePadronizada">
+          Sigla:
+          <br>
+          <input matInput type="text" name="sigla" #sigla formControlName="sigla">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          Descrição:
+          <br>
+          <input matInput type="text" name="descricao" #descricao formControlName="descricao">
+        </mat-form-field>
+        <br>
+
+        <button
+          mat-raised-button
+          color= "accent"
+          type="submit"
+          [disabled]="formAtividade.pristine || formAtividade.invalid">
+          Confirmar
+        </button>
+
+        <button
+          mat-raised-button
+          color= "primary"
+          type="alert"
+          routerLink="/lista-atividades">
+          Voltar
+        </button>
+      </mat-card>
+    </form>
+</div>

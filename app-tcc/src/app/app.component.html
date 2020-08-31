@@ -1,0 +1,28 @@
+<!-- Menu -->
+<app-menu-base></app-menu-base>
+
+<app-formulario-login *ngIf="(router.url === '/login')"></app-formulario-login>
+<!-- o side-nav temq ser o primeiro componente filho do sidenav-container -->
+<!-- o side-nav-content pode ser usado ou nao, caso nao seja usado oq esta dentro do sidenav-container entra como conteudo implicito -->
+<mat-sidenav-container *ngIf="!(router.url === '/login')">
+
+  <!-- Side Bar [fixedInViewport]="true" -->
+  <mat-sidenav
+  mode="side"
+  opened>
+    <!-- Componente com a estrutura do side bar -->
+    <app-side-bar></app-side-bar>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- CONTEUDO PRINCIPAL -->
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>
+
+<!-- Rodape -->
+<app-rodape></app-rodape>

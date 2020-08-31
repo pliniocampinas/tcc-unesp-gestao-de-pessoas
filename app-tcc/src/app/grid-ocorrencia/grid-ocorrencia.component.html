@@ -1,0 +1,34 @@
+<h1>Ocorrências Cadastradas</h1>
+<hr>
+<button mat-raised-button color="primary" class="botao-cadastrar" (click)="cadastrar()">Cadastrar Ocorrência</button>
+<table mat-table [dataSource]="listaOcorrencias" class="mat-elevation-z8" *ngIf="listaOcorrencias.length > 0">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="titulo">
+    <th mat-header-cell *matHeaderCellDef> Título </th>
+    <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="usuario">
+      <th mat-header-cell *matHeaderCellDef> Usuário </th>
+      <td mat-cell *matCellDef="let element"> {{element.nomeUsuario}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef> Tipo </th>
+      <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef class="centraliza"> Ações </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="primary" (click)="editar(element._id)">Editar</button>
+        <button mat-button color="warn" (click)="apagar(element._id)">Apagar</button>
+      </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+<hr>

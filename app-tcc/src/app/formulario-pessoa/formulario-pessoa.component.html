@@ -1,0 +1,115 @@
+<div>
+  <h1>Cadastro de Pessoas</h1>
+  <hr>
+  <form [formGroup]="formPessoa"
+        (submit)="onConfirmarPessoa(nome.value, rg.value, orgaoEmissor.value, uf.value, cpf.value, dataNasc.value,
+                                    filiacaoPaterna.value, filiacaoMaterna.value, dataEmissao.value)"
+        id="centro">
+    <mat-card>
+
+      <mat-form-field>
+        Nome Completo:<br>
+        <input matInput type="text" name="nome" #nome formControlName="nomeCompleto">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        RG:<br>
+        <input matInput type="text" name="rg" #rg formControlName="rg">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Orgão Emissor:
+        <br>
+        <input matInput type="text" name="orgaoEmissor" #orgaoEmissor formControlName="orgaoEmissor">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Unidade Federativa:
+        <br>
+        <input matInput type="text" name="uf" #uf formControlName="uf">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        CPF:
+        <br>
+        <input matInput type="text" name="cpf" #cpf formControlName="cpf">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Data de Nascimento:
+        <br>
+        <input matInput type="date" name="dataNasc" #dataNasc formControlName="dataNasc">
+        <br>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Filiação Paterna:
+        <br>
+        <input matInput type="text" name="filiacaoPaterna" #filiacaoPaterna formControlName="filiacaoPaterna">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Filiação Materna:
+        <br>
+        <input matInput type="text" name="filiacaoMaterna" #filiacaoMaterna formControlName="filiacaoMaterna">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        Data de Emissão:
+        <br>
+        <input matInput type="date" name="dataEmissao" #dataEmissao formControlName="dataEmissao">
+        <br>
+      </mat-form-field>
+      <br>
+
+      <div class="input-imagem">
+          Imagem do Rg - Lado da Foto:
+          <br>
+          <input id="imagemFoto" type="file"  (change)="uploadImagemFoto()">
+          <br>
+      </div>
+      <br>
+
+      <div class="exibe-imagens-anexadas">
+          <img [src]="imagePathFoto" *ngIf="imagePathFoto" class="imagens-anexadas">
+      </div>
+      <br>
+
+      <div class="input-imagem">
+          Imagem do Rg - Verso da foto:
+          <br>
+          <input id="imagemVerso" type="file" (change)="uploadImagemVerso()">
+          <br>
+      </div>
+      <br>
+
+      <div class="exibe-imagens-anexadas">
+          <img [src]="imagePathVerso" *ngIf="imagePathVerso" class="imagens-anexadas">
+      </div>
+
+      <button
+        mat-raised-button
+        color= "accent"
+        type="submit"
+        [disabled]="formPessoa.pristine || formPessoa.invalid">
+        Confirmar
+      </button>
+
+      <button
+        mat-raised-button
+        color= "primary"
+        type="alert"
+        routerLink="/lista-pessoas">
+        Voltar
+      </button>
+    </mat-card>
+  </form>
+</div>
